@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-body: "Libre Baskerville", serif;
+  --font-typewriter: "Special Elite", monospace;
+
+  --color-paper: #F3ECDC;
+  --color-ink: #2B2A26;
+  --color-accent: #8B6F47;
+  --color-border: #C9B99A;
+
+  --shadow-vintage: 3px 3px 0 #C9B99A;
+}
+
+.retro-input {
+  @apply w-full p-2 border-2 bg-paper border-border font-body focus:outline-none focus:ring-1 focus:ring-accent;
+}
+
+.retro-button {
+  @apply px-4 py-2 font-serif transition border-2 border-ink hover:bg-ink hover:cursor-pointer hover:text-paper;
+}
+
+.paper-grain {
+  position: relative;
+}
+
+.paper-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-slide {
+  animation: fadeSlide 0.25s ease-out;
+}
+
+
+.type-cursor::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes openPage {
+  from {
+    transform: perspective(1000px) rotateY(-120deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(1000px) rotateY(0);
+    opacity: 1;
+  }
+}
+
+.page-open {
+  transform-origin: left;
+  animation: openPage 0.8s ease-out;
+}
+
+
+
