@@ -8,7 +8,7 @@
     <img
       v-if="book.cover"
       :src="book.cover"
-      class="object-cover w-full mb-3 border h-44"
+      class="object-cover mb-3 border aspect-4/5"
     />
     <div class="flex flex-col gap-2">
       <h3 class="text-lg font-typewriter">{{ book.title }}</h3>

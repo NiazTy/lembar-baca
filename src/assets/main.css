@@ -75,5 +75,16 @@
   animation: openPage 0.8s ease-out;
 }
 
-
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.slide-enter-from {
+  transform: translateX(20%);
+  opacity: 0;
+}
+.slide-leave-to {
+  transform: translateX(-20%);
+  opacity: 0;
+}
 

@@ -14,5 +14,5 @@ export interface Book {
   review: string
   rating: number
   date: string
-  sessions: ReadingSession[] // ⬅️ INI KUNCI
+  sessions: ReadingSession[]
 }
